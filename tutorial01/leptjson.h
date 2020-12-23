@@ -9,9 +9,9 @@ typedef struct {
 
 enum {
     LEPT_PARSE_OK = 0,
-    LEPT_PARSE_EXPECT_VALUE,
-    LEPT_PARSE_INVALID_VALUE,
-    LEPT_PARSE_ROOT_NOT_SINGULAR
+    LEPT_PARSE_EXPECT_VALUE,  // If json only contain whitespaces
+    LEPT_PARSE_INVALID_VALUE,  // If meets invalid value, at here: if meets values excpet null/true/false
+    LEPT_PARSE_ROOT_NOT_SINGULAR  // If a value is followed by another character after the white space
 };
 
 int lept_parse(lept_value* v, const char* json);
